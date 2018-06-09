@@ -26,6 +26,7 @@ public class UsuarioController {
 	@Autowired
 	UsuarioRepository usuarioRepository;
 	
+	//se utiliza para cifrar la contraseña SHAHashing
 	private SHAHashing bCryptPasswordEncoder = new SHAHashing();
 	
 	@GetMapping

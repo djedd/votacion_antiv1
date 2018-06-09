@@ -27,7 +27,7 @@ public class Mandato {
 	@Column(name = "descripcion", nullable = false)
 	private String descripcion;
 	
-	@Column(name = "fecha_registro", nullable = false)
+	@Column(name = "fecha_creacion", nullable = false)
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy HH:mm:ss")
 	private Date fecha_creacion;
 
