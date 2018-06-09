@@ -26,7 +26,7 @@ public class UsuarioController {
 	@Autowired
 	UsuarioRepository usuarioRepository;
 	
-	private SHAHashing bCryptPasswordEncoder;
+	private SHAHashing bCryptPasswordEncoder = new SHAHashing();
 	
 	@GetMapping
 	public ResponseEntity<List<Usuario>> getUsuarioList() {
@@ -40,6 +40,7 @@ public class UsuarioController {
 
 	@PostMapping("/save")
 	public ResponseEntity<Void> createUsuario(@RequestBody Usuario usuario) {
+		
 		usuario.setContrasena(bCryptPasswordEncoder.encode(usuario.getContrasena()));
 		usuarioRepository.save(usuario);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
